@@ -10,10 +10,10 @@ const siteMetadata = {
   siteRepo: 'https://github.com/calsora/nextjs-blog',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
-  mastodon: 'https://mastodon.social/@mastodonuser',
+  //  mastodon: 'https://mastodon.social/@mastodonuser',
   //email: 'address@yoursite.com',
   github: 'https://github.com',
-  x: 'https://twitter.com/x',
+  //  x: 'https://twitter.com/x',
   // twitter: 'https://twitter.com/Twitter',
   //  facebook: 'https://facebook.com',
   youtube: 'https://youtube.com',
@@ -22,7 +22,7 @@ const siteMetadata = {
   //instagram: 'https://www.instagram.com',
   //medium: 'https://medium.com',
   //bluesky: 'https://bsky.app/',
-  locale: 'en-US',
+  locale: 'en',
   // set to true if you want a navbar fixed to the top
   stickyNav: false,
   analytics: {
@@ -73,7 +73,7 @@ const siteMetadata = {
       metadata: '0',
       // theme example: light, dark, dark_dimmed, dark_high_contrast
       // transparent_dark, preferred_color_scheme, custom
-      theme: 'light',
+      theme: 'dark',
       // theme when dark mode
       darkTheme: 'transparent_dark',
       // If the theme option above is set to 'custom`
