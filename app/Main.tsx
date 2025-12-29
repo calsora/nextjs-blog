@@ -3,6 +3,8 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
+import ProLanguagesMarquee from '@/components/ProLanguagesMarquee'
+import Image from 'next/image'
 
 const MAX_DISPLAY = 6
 
@@ -11,11 +13,12 @@ export default function Home({ posts }) {
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <h1 className="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14 dark:text-gray-100">
-            Latest
+          <h1 className="text-primary-500 text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+            Hey👋 I'm Cal
           </h1>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
+            This is my blog where I share {siteMetadata.description} as a Power Platform & D365
+            developer based in the UK.
           </p>
         </div>
         <ul className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -27,9 +30,11 @@ export default function Home({ posts }) {
                 <article className="flex flex-col space-y-4">
                   {/* Banner */}
                   {images?.[0] && (
-                    <img
+                    <Image
                       src={images[0]}
                       alt={title}
+                      width={800}
+                      height={400}
                       className="max-h-64 w-full rounded-lg object-contain shadow-md"
                     />
                   )}

@@ -16,11 +16,11 @@
   /* Copied from https://tailwindcss.com/docs/theme#default-theme-variable-reference */
   --color-primary-50: oklch(98% 0.016 73.684);
   --color-primary-100: oklch(95.4% 0.038 75.164);
-  --color-primary-200: oklch(90.1% 0.076 70.697) --color-primary-300: oklch(83.7% 0.128 66.29);
-  --color-primary-400: oklch(82.8% 0.189 84.429);
+  --color-primary-200: oklch(90.1% 0.076 70.697) --color-primary-300: oklch(0.64 0.2 38);
+  --color-primary-400: oklch(0.64 0.2 38);
   /* main colour */
-  --color-primary-500: oklch(76.9% 0.188 70.08);
-  --color-primary-600: oklch(66.6% 0.179 58.318);
+  --color-primary-500: oklch(0.64 0.2 38);
+  --color-primary-600: oklch(0.64 0.2 38);
   --color-primary-700: oklch(55.3% 0.195 38.402);
   --color-primary-800: oklch(47% 0.157 37.304);
   --color-primary-900: oklch(40.8% 0.123 38.172);
@@ -59,7 +59,6 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-
   *,
   ::after,
   ::before,
@@ -70,21 +69,21 @@
 
   a,
   button {
-    outline-color: var(--color-primary-500);
+    outline-color: var(--color-primary-600);
   }
 
   a:focus-visible,
   button:focus-visible {
     outline: 2px solid;
     border-radius: var(--radius-sm);
-    outline-color: var(--color-primary-500);
+    outline-color: var(--color-primary-600);
   }
 }
 
 @layer utilities {
   .prose {
     & a {
-      color: var(--color-primary-500);
+      color: var(--color-primary-600);
 
       &:hover {
         color: var(--color-primary-600);
@@ -111,7 +110,7 @@
 
   .prose-invert {
     & a {
-      color: var(--color-primary-500);
+      color: var(--color-primary-600);
 
       &:hover {
         color: var(--color-primary-400);

@@ -1,0 +1,164 @@
+---
+title: 'How to add react-bootstrap to Power Pages #3'
+date: '2025-12-12'
+lastmod: '2024-08-16'
+tags: ['react-js', 'power-pages', 'bootstrap']
+draft: true
+summary: 'As Power Pages officially supports Bootstrap, it would be silly not to consider it when building a SPA powered by React and Power Pages.'
+images:
+  [
+    'https://res.cloudinary.com/dnpazhkyr/image/upload/v1766515084/React-Bootstrap_with_Power_Pages_3_ov4n0y.png',
+  ]
+authors: ['default']
+---
+
+![tailwind-nextjs-banner](https://res.cloudinary.com/dnpazhkyr/image/upload/v1766515084/React-Bootstrap_with_Power_Pages_3_ov4n0y.png)
+
+As Power Pages officially supports Bootstrap, it would be silly not to consider it when building a SPA powered by React and Power Pages.
+
+![GIF1](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExam9hN3F2M29tNng1YzJxNHM4M3JqZWN6NW43emh0a292ZjN3ZnBvMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/gyD8JVI7XDY8rVzuxt/giphy.gif)
+
+Use https://react-bootstrap.netlify.app/ as this contains built-in components for React and Bootstrap.
+
+## Build time
+
+Install through NPM
+
+```
+npm install react-bootstrap
+
+```
+
+Add a custom header component
+
+```
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+
+function Header() {
+  return (
+    <Navbar expand="lg" className="bg-body-tertiary" data-bs-theme="light">
+      <Container>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Link</Nav.Link>
+            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Another action
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+}
+
+export default Header;
+
+```
+
+Then add this to your main.tsx file to include Bootstrap styling file
+
+```
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
+
+## Bonus - Routing with Bootstrap
+
+```
+npm install react-router-bootstrap
+```
+
+Import and declare link-container
+
+```
+import { LinkContainer } from "react-router-bootstrap";
+
+// EG.
+
+        <LinkContainer to="/">
+        <Navbar.Brand>BookEasyy</Navbar.Brand>
+        </LinkContainer>
+```
+
+Now if your using Typescript you will get this import error for LinkContainer.
+
+Could not find a declaration file for module 'react-router-bootstrap'. '/home/xxxx/projects/power-pages-react-startup/power-pages-react-startup/power-pages-react-startup-app/node_modules/react-router-bootstrap/index.js' implicitly has an 'any' type.
+
+If you look at file mentioned above it doesn’t declare a type for LinkContainer and throws an error as it’s ‘any‘. To fix this create a new file “react-router-boostrap.ds“ within the src folder and copy the below.
+
+```
+// src/types/react-router-bootstrap.d.ts
+declare module "react-router-bootstrap" {
+  import * as React from "react";
+
+  export interface LinkContainerProps {
+    to: string;
+    children?: React.ReactNode;
+  }
+
+  export const LinkContainer: React.FC<LinkContainerProps>;
+}
+```
+
+The above should remove the error as were declaring types for LinkContainer.
+
+Final working code for the header.
+
+```
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { LinkContainer } from "react-router-bootstrap";
+
+function Header() {
+  return (
+    <Navbar expand="lg" className="bg-body-tertiary" data-bs-theme="light">
+      <Container>
+            <LinkContainer to="/">
+            <Navbar.Brand>BookEasy</Navbar.Brand>
+            </LinkContainer>
+
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <LinkContainer to="/">
+            <Nav.Link>Home</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/book">
+            <Nav.Link>Book</Nav.Link>
+            </LinkContainer>
+            <LinkContainer to="/my-bookings">
+            <Nav.Link>Confirm Booking</Nav.Link>
+            </LinkContainer>
+     </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
+}
+
+export default Header;
+```
+
+## What's next
+
+I will cover how to use Props.
+
+As always, thanks for reading and take it easy.
+
+👋 Enjoyed this post?
+Sign up for my newsletter to get notified whenever a new blog is out.
+Don't forget to check your spam folder so you don't miss out!

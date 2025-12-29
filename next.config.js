@@ -1,5 +1,6 @@
+const withPlugins = require('next-compose-plugins')
+const withTM = require('next-transpile-modules')(['some-module'])
 const { withContentlayer } = require('next-contentlayer2')
-
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
@@ -13,7 +14,7 @@ const ContentSecurityPolicy = `
   media-src *.s3.amazonaws.com;
   connect-src *;
   font-src 'self';
-  frame-src giscus.app
+  giscus.app;
 `
 
 const securityHeaders = [
