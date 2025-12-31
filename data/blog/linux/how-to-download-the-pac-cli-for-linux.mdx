@@ -1,0 +1,52 @@
+---
+title: 'How to download the PAC CLI for Linux'
+date: '2025-12-09'
+lastmod: '2024-08-16'
+tags: ['linux']
+draft: true
+summary: 'I’ve recently added Linux (Ubuntu) to my Mac Book pro 2015 to see if it can last me a couple more years as it couldn’t handle anymore system updates anymore.'
+images:
+  ['https://res.cloudinary.com/dnpazhkyr/image/upload/v1765040940/PAC_CLI_with_Linux_etdlc2.png']
+authors: ['default']
+---
+
+![tailwind-nextjs-banner](https://res.cloudinary.com/dnpazhkyr/image/upload/v1765040940/PAC_CLI_with_Linux_etdlc2.png)
+
+I’ve recently added Linux (Ubuntu) to my Mac Book pro 2015 to see if it can last me a couple more years as it couldn’t handle anymore system updates anymore.
+
+With this in mind, I wanted to try and use it as my development machine for personal projects to see what it could handle. Plus, to have an escape from Copilot.
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExaGkzcmlsdmdraGt4dTJwcnB0aHI4OXd2ZnJmdzFzNHVqM3U5dnFtYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ETM2m9EI2pge4/giphy.gif)
+
+## Why PAC CLI
+
+Its one of the essential tools for any developer or administrator of the Power Platform. You can find useful commands [here](https://learn.microsoft.com/en-us/power-platform/developer/cli/introduction?tabs=windows).
+
+## Installation
+
+Out of interest (as of 19/11/25) despite the prerequisites saying 6.0 sdk is required for the PAC CLI you actually need 9.0 for Linux (Ubuntu).
+
+![](https://res.cloudinary.com/dnpazhkyr/image/upload/v1767127696/49b58679-17a1-49b6-9d35-5c1e0df7b6d7.png)
+
+I couldn’t get the snap download to work for 9.0 so I ended up directly downloading the sdk from [<mark>Ubuntu</mark>](http://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-install?tabs=dotnet9&pivots=os-linux-ubuntu-2404) and running the below commands.
+
+```bash
+sudo apt-get update && \
+  sudo apt-get install -y dotnet-sdk-9.0
+```
+
+Go ahead and download the extension from VS Code and reload VS code.
+
+![](https://res.cloudinary.com/dnpazhkyr/image/upload/v1767127755/d8ff9f19-dda3-45c6-b878-34407b1c7999.png)
+
+Proof it works :)
+
+---
+
+As always, thanks for reading and take it easy!
+
+**👋 Enjoyed this post?**  
+**Sign up for my newsletter to get notified whenever a new blog is out.  
+Don't forget to check your spam folder so you don't miss out!**
+
+This is a personal, non-work project just for learning and sharing.

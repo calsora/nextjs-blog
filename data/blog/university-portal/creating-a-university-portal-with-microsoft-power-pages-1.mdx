@@ -1,0 +1,77 @@
+---
+title: 'Building a University Portal with Microsoft Power Pages #1'
+date: '2025-12-03'
+lastmod: '2025-08-16'
+tags: ['power-pages']
+draft: true
+summary: 'Back in my first IT role, I worked at a university, supporting and developing their internal portal, which allowed students and lecturers to access resources.'
+images:
+  [
+    'https://res.cloudinary.com/dnpazhkyr/image/upload/v1754927857/Building_a_university_portal_1_prbccz.png',
+  ]
+authors: ['default']
+---
+
+![tailwind-nextjs-banner](https://res.cloudinary.com/dnpazhkyr/image/upload/v1754927857/Building_a_university_portal_1_prbccz.png)
+
+## Background
+
+Back in my first IT role, I worked at a university, supporting and developing their internal portal, which allowed students and lecturers to access resources.
+
+Fast forward to today, and I’m working with Microsoft Power Pages. That’s when I thought: _why not recreate a university portal in public?_ It fits the use case for the platform well and I will be able to document process step-by-step, sharing my design decisions, technical challenges, and lessons learned along the way.
+
+Whether you’re a Power Pages beginner, a fellow developer, or just curious about how portals come together, you can follow along as I will be sharing updates regularly.
+
+## Goals
+
+- Build a dashboard for both students and lecturers to access key information and resources.
+  - Always… always, try and use the out-of-the-box features first before using custom code to keep it simple.
+  - Build this quickly to a release a MVP.
+
+## Let’s get started
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExendnMmYzeG9oYW1obno1ZHY3MDN0dTBmejVjbnVkNTcycmNzMmJnMSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/aMMWn9Ogf3UOI/giphy.gif)
+
+## Design
+
+When I start to a build a portal I like to draw up quick mockups to see what the portal could look like as it can spark other questions around the entity relationship diagram etc. So to do this, before I would use Figma but now I use [v0.app](https://v0.app/) that generates mockups using prompts.
+
+I found out about this tool from [Dennis Doerflinger](https://www.youtube.com/watch?v=KwaBkC4iXzQ). To create a good design prompt I would recommend generating this with your AI model of choice, I used ChatGPT.
+
+I’ve recently rewatched the Monsters university so I thought it would be fun to see what AI could come up with and I was surprised (in a good way).
+
+The design now gave me a couple of ideas to take away for tables etc.
+
+The prompt I used can be found below as requested by [**Adi Cristea**](https://www.linkedin.com/in/adi-cristea-9873a566/overlay/about-this-profile/) **thanks for the idea!**
+
+Design a modern, clean UI/UX concept for a fictional 'Monster University' web portal built with a low-code platform like Microsoft Power Pages. The website has two user perspectives:Student View: playful but professional, friendly colors (purple, teal, and off-white), student dashboard with profile, course registration, timetable, and assignments. Fun monster-themed icons.Teacher View: more structured and minimalistic, but still branded consistently. Dashboard showing class schedules, student performance, and assignment submissions.Include responsive layout mockups for desktop and mobile, showing top navigation bar, sidebar menus, and homepageclean UI similar to Microsoft Fluent Design or Google Material UI. Fonts should be accessible and modern (like Segoe UI or Open Sans).Optional elements: progress bars for learning modules, colorful badges for achievements, a search bar with filters, and a hero banner with a cartoon-style monster mascot.
+
+## Entity relationship diagram
+
+The ERD is the backbone of any solution, it’s important to get right otherwise it can create a lot of rework.
+
+At work I like to use Visio but since I don’t have a personal license I went with [draw.io](http://draw.io) that’s free and does the job well.
+
+![Conceptual diagram of a data design for a university portal](https://res.cloudinary.com/dnpazhkyr/image/upload/v1754920495/image_2_rehplp.png)
+
+![](https://res.cloudinary.com/dnpazhkyr/image/upload/v1754924755/image_3_ieykiq.png)
+
+As you can see the design is really simple and I wanted to cover the main tables at a high-level (conceptual) level to get going.
+
+With all portal projects, the account and contact are really important for security so student and other tables are linked to the contact table.
+
+As you can see the design really helped me as I was able to take parts of the screen away and create tables for it, for example the schedule table that will store the modules lectures.
+
+## What’s next?
+
+In the next update I will cover creating and structuring the university portal in Power Pages and setting up the model-driven app.
+
+FYI there will be more Monster University GIFS!
+
+As always, thanks for reading and take it easy!
+
+**👋 Enjoyed this post?**  
+Sign up for my newsletter to get notified whenever a new blog is out.  
+_Don't forget to check your spam folder so you don't miss out!_
+
+This is a personal, non-work project just for learning and sharing.

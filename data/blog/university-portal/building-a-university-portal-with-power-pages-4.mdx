@@ -1,0 +1,79 @@
+---
+title: 'Building a University Portal with Power Pages #4'
+date: '2025-12-06'
+lastmod: '2025-08-16'
+tags: ['react-js', 'power-pages', 'bootstrap', 'sass']
+draft: true
+summary: 'In part 3 I said I would cover the styling of the portal with a custom theme to make it look less like a Power Pages site.'
+images:
+  [
+    'https://res.cloudinary.com/dnpazhkyr/image/upload/v1767182387/Building_a_university_portal_4_p5qpvw.png',
+  ]
+authors: ['default']
+---
+
+![tailwind-nextjs-banner](https://res.cloudinary.com/dnpazhkyr/image/upload/v1767182387/Building_a_university_portal_4_p5qpvw.png)
+
+## Quick recap
+
+In this series, I’m documenting the process of building a university portal with Power Pages, sharing practical tips along the way :)
+
+In part 3 I said I would cover the styling of the portal with a custom theme to make it look less like a Power Pages site.
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExc243Zm13cG5lc25oYWI0ZDhoZ2JtaHIxNDV3OHg3M2hxa3IyZW92NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/ghAbYUswkmXHq/giphy.gif)
+
+## Logo and favicon
+
+To get started, I created a logo in Figma using inspiration from the design covered in part #1.
+
+Uploaded the logo as a [web file](https://learn.microsoft.com/en-us/power-pages/configure/web-files) and used the existing content snippet (Logo URL) to reference the logo in the header web template.
+
+![](https://res.cloudinary.com/dnpazhkyr/image/upload/v1756322386/uni_logo_ifc3hs.png)
+
+```xml
+<img src="{{ snippets['Logo URL'] }}" alt="Logo" width="64" height="64" class="d-inline-block align-text-top">
+```
+
+To create the browser icon (favicon) I resized the logo to 16×16 and followed [**Ulrikke Akerbæk**](https://ulrikke.akerbak.com/) **awesome** [**blog post**](https://ulrikke.akerbak.com/2022/09/23/browser-icon-favicon-power-pages/) that covers how to add a favicon to Power Pages.
+
+## Custom theme with Bootstrap
+
+**Bootswatch** is a collection of themes that give you good start to building a theme for a portal. I liked it that much that I’ve covered how to add a **Bootswatch** theme to Power Pages [here](https://calumharrison.com/free-custom-bootstrap-themes-for-power-pages).
+
+I downloaded the **Zephyr** theme and uploaded the web files to the portal and made sure to deactivate the other styling web files (Bootstrap and portal basic).
+
+## Sass
+
+Sass is a great to way organise your CSS, especially when you working with a theme as you can change the primary colours for your main stylesheet.
+
+Again shoutout to [**Ulrikke Akerbæk**](https://ulrikke.akerbak.com/) **brilliant** [**blog post**](https://ulrikke.akerbak.com/2022/05/11/power-pages-branding/) that covers how to add Sass to Power Pages. I used this for this project too.
+
+The only drawback with this current setup is that it doesn’t create the Bootstrap style/variables from scratch so I’ve added this to the backlog to look at this more in the future. Basically the process should be able to create the Bootstrap file and then minify it as a web file.
+
+At the moment, I’m just working with a minified Bootstrap file from **Bootswatch**.
+
+![](https://res.cloudinary.com/dnpazhkyr/image/upload/v1756391438/sass_example_o31fv0.png)
+
+## Let’s fake it
+
+To see what the portal would like, I added dummy data to the areas of the web page using the the web templates created in part #3.
+
+The portal looks like this so far, drum roll…
+
+![](https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExY3h1cWh0cjJpaG1rbTJ4ZWozNTFibjg0NjYzMWh1d3ZybW9tMHZ0byZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/11lU2bLTOl26vC/giphy.gif)
+
+![](https://res.cloudinary.com/dnpazhkyr/image/upload/v1756392105/website_part4_il5dze.png)
+
+## **What’s next?**
+
+The look and feel of the portal looks good, so for next time I will cover changing the dummy data with real data from the database using fetch xml and liquid.
+
+If there is anything that I’ve covered that would be useful to cover in more detail please let me know in the comments or LinkedIn and I can add it to the backlog for the future :)
+
+As always, thanks for reading and take it easy!
+
+**👋 Enjoyed this post?**  
+**Sign up for my newsletter to get notified whenever a new blog is out.  
+Don't forget to check your spam folder so you don't miss out!**
+
+This is a personal, non-work project just for learning and sharing.

@@ -8,12 +8,9 @@ interface Project {
 const projectsData: Project[] = [
   {
     title: 'University Portal built with Power Pages',
-    description: `What if you could look up any information in the world? Webpages, images, videos
-    and more. Google has many features to help you find exactly what you're looking
-    for.`,
-    imgSrc: '/static/images/google.png',
-    href: 'https://www.google.com',
+    description: `A comprehensive university portal developed using Microsoft Power Pages, enabling seamless access to academic resources, course management, and student services through an intuitive web interface.`,
+    imgSrc: '/static/images/university-portal-project.png',
+    href: 'https://youtu.be/fEFLGTSNYss?si=2aBWoeZEj5Gv2pdb',
   },
 ]
-
 export default projectsData

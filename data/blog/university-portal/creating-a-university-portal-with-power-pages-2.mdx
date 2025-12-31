@@ -1,0 +1,89 @@
+---
+title: 'Building a University Portal with Power Pages #2'
+date: '2025-12-04'
+lastmod: '2025-08-16'
+tags: ['power-pages']
+draft: true
+summary: 'In part 1 I said I would cover the Model-driven app that will be the back office application and the portal structure so let’s do that.'
+images:
+  [
+    'https://res.cloudinary.com/dnpazhkyr/image/upload/v1767183170/Building_a_university_portal_2_odo5y1.png',
+  ]
+authors: ['default']
+---
+
+![tailwind-nextjs-banner](https://res.cloudinary.com/dnpazhkyr/image/upload/v1767183170/Building_a_university_portal_2_odo5y1.png)
+
+## Quick recap
+
+In this series, I’m documenting the process of building a university portal with Power Pages, sharing practical tips along the way :)
+
+In part 1 I said I would cover the Model-driven app that will be the back office application and the portal structure so let’s do that.
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcHl3ZW83OTNxNnFmdGY4ajh0YTFub3dpMzZzeGh1NTdtcWdsb2M0NyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/b9IcvWv604w5MfGL6I/giphy.gif)
+
+## High-level view
+
+This is how I’ve imagined it would work. There are three roles covering two areas (CRM and Power Pages).
+
+| Role                              | Tech                   | Purpose                                        |
+| --------------------------------- | ---------------------- | ---------------------------------------------- |
+| Administrator (back office staff) | CRM (Model-driven app) | Check and update records in the system.        |
+| Lecturer                          | Power Pages            | Access resources and perform daily operations. |
+| Student                           | Power Pages            | Access resources and record activities.        |
+
+## Model-driven app (CRM)
+
+With the ERD in place I did the following…
+
+1. Created the tables within a custom solution in Dataverse.
+2. Created a Model-driven app that showcases the tables created.
+3. Added test data so that this can be pulled from Power Pages.
+4. Assigned icons to the tables by creating web resources to make it look better.
+
+   ![](https://res.cloudinary.com/dnpazhkyr/image/upload/v1755341583/mda_table_icons_i2lpsj.png)
+
+I found a [figma link](https://www.figma.com/design/Qi7OX9SgQps6yuWl9iBK5I/Microsoft-Fluent-system-iconography--Community-?node-id=13868-24524&t=IZ0CkvfwaRoanev2-0) that has lots of fluent UI icons for free so worth checking!
+
+## Developer setup
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDQxbGM1NTY1amJqd251d3JrOXJ3b2oyemZna21yMjA4OWN6cms2bSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l46Clugoy0JONjCc8/giphy.gif)
+
+For solo projects this is my normal setup but it’s different for working in teams as you don’t want to override people’s work that can happen with pac cli.
+
+- VS code
+  - [Power Platform Tools extension](https://marketplace.visualstudio.com/items?itemName=microsoft-IsvExpTools.powerplatform-vscode) to download/import the portal
+- [GIT](https://git-scm.com/)
+- GitHub Desktop to track code changes
+- GitHub to store code (for previous work projects I’ve used Azure DevOps
+
+With the setup completed, I did the following…
+
+1. Created a Power Pages site from blank (I decided to not go with an existing template).
+2. Created a auth profile (it’s how you connect to your environment)
+3. Got the website ID from the _pac pages list_ command
+4. Downloaded the portal using the pac cli command in VS code.
+
+```yaml
+pac pages download --path "<yourportalfolder>" --webSiteId "<websiteid>" --modelVersion 2 -o
+```
+
+## Portal structure
+
+In order to understand what configuration is needed on the dashboard page I like to breakdown the structure particularly for complex pages like the dashboard.
+
+![](https://res.cloudinary.com/dnpazhkyr/image/upload/v1755343712/portal_structure_dashboard_takf3p.png)
+
+## What’s next?
+
+There will be web templates that will be created for the dashboard that should include liquid to fetch data.
+
+If there is anything that I’ve covered that would be useful to cover in more detail please let me know in the comments or LinkedIn and I can add it to the backlog for the future :)
+
+As always, thanks for reading and take it easy!
+
+**👋 Enjoyed this post?**  
+**Sign up for my newsletter to get notified whenever a new blog is out.  
+\***Don't forget to check your spam folder so you don't miss out!\*
+
+This is a personal, non-work project just for learning and sharing.

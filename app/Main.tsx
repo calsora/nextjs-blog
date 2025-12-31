@@ -30,7 +30,7 @@ export default function Home({ posts }) {
                 <article className="flex flex-col space-y-4">
                   {/* Banner */}
                   {images?.[0] && (
-                    <Image
+                    <img
                       src={images[0]}
                       alt={title}
                       width={800}

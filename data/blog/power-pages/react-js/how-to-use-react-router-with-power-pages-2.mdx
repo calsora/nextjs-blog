@@ -1,0 +1,160 @@
+---
+title: 'How to use React Router with Power Pages #2'
+date: '2025-12-11'
+lastmod: '2025-08-16'
+tags: ['react-js', 'power-pages']
+draft: true
+summary: 'In order to navigate between pages in React SPA site **Routing** needs to be in place.'
+images:
+  [
+    'https://res.cloudinary.com/dnpazhkyr/image/upload/v1766515084/React_routing_with_Power_Pages_2_jnkzqe.png',
+  ]
+authors: ['default']
+---
+
+![tailwind-nextjs-banner](https://res.cloudinary.com/dnpazhkyr/image/upload/v1766515084/React_routing_with_Power_Pages_2_jnkzqe.png)
+
+In this series I’m trying to build a portal with React and Power Pages and documenting tips along the way.
+
+I’m not by any means a expert in React or Typescript but I do have some past experience with these tools so I’m learning along the way too :)
+
+---
+
+In order to navigate between pages in React SPA site **Routing** needs to be in place.
+
+At the time this post was written December 2025, there was a critical vulnerability with Routing with Next JS. Please review if you have used this tech stack.
+
+## Routing introduction
+
+There are 4 key components for Routing.
+
+**BrowserRouter:** Wraps your app and uses the browser’s history API to keep the UI in sync with the URL.
+
+**Routes:** A container that looks at the current URL and decides which route should render.
+
+**Route:** Defines a mapping between a URL path and the component that should render for it.
+
+**Link:** Renders a navigation element that changes the URL without reloading the page.
+
+## Routing example
+
+In this example we will be following a simple structure of a booking application. There will be these pages.
+
+1. Home
+2. Book
+3. Confirm booking
+4. My bookings
+
+First thing to do is to install the npm module.
+
+```bash
+npm install react-router-dom
+```
+
+Then import the browser import component around the main render file. I’ve placed this in main to separate it out but you can include it in the app file too.
+
+```typescript
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import App from './App.tsx'
+import { BrowserRouter } from 'react-router-dom'
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <BrowserRouter>
+    <App />
+    </BrowserRouter>
+  </StrictMode>
+)
+```
+
+Then its time to add Routes components.
+
+First we establish the Routes component and within that the routes to the navigation page. This tells this file to say if we get a request to this path go to this component/page.
+
+```typescript
+import React from 'react'
+import Home from './pages/Home'
+import Book from './pages/bookings/Book'
+import ConfirmBooking from './pages/bookings/ConfirmBooking'
+import MyBookings from './pages/bookings/MyBookings'
+import { Routes, Route } from "react-router-dom"
+import Layout from './components/layout/Layout'
+
+
+function App() {
+
+  return (
+    <>
+      <Layout>
+
+        {/* Navigation */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/book" element={<Book />} />
+          <Route path="/confirm-booking" element={<ConfirmBooking />} />
+          <Route path="/my-bookings" element={<MyBookings />} />
+        </Routes>
+
+      </Layout>
+
+    </>
+
+  )
+}
+
+export default App
+```
+
+To trigger the routing we need to provide a link. In the example, below on the home page there is a button and when pressed it redirects to the booking page.
+
+<div data-node-type="callout">
+  <div data-node-type="callout-emoji">📣</div>
+  <div data-node-type="callout-text">
+    As I’m using Bootstrap the Link container component has been used. With this npm module{' '}
+    <code>react-router-bootstrap</code>
+  </div>
+</div>
+
+```typescript
+import { Row, Col, Button } from "react-bootstrap";
+import { LinkContainer } from "react-router-bootstrap";
+
+function Home() {
+  return (
+    <Row className="align-items-center" style={{ minHeight: "60vh" }}>
+      <Col md={{span: 8, offset: 2 }} lg={{span: 8, offset: 2 }} xl={{span: 8, offset: 2 }} className="text-center">
+        <h1 className="mb-3 display-3">Book appointments the easy way.</h1>
+        <p className="mb-4 text-muted">
+          BookEasy is a simple demo booking app built with React, React-Bootstrap,
+          and Power Pages. Pick a time slot, confirm your details, and you&apos;re done.
+        </p>
+        <LinkContainer to="/book">
+        <Button variant="primary" size="lg">Book an Appointment
+        </Button>
+        </LinkContainer>
+      </Col>
+    </Row>
+  );
+}
+
+export default Home;
+```
+
+![Route example](https://res.cloudinary.com/dnpazhkyr/image/upload/v1767126723/298e5e35-bf2e-4938-b7b6-42fc1a78ec7b.png)
+
+## What’s next
+
+I will likely cover how to use Bootstrap with React JS.
+
+---
+
+As always, thanks for reading and happy Christmas for 2025!
+
+**👋 Enjoyed this post?**  
+**Sign up for my newsletter to get notified whenever a new blog is out.  
+Don't forget to check your spam folder so you don't miss out!**
+
+This is a personal, non-work project just for learning and sharing.

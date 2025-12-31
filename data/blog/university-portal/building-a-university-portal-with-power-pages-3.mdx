@@ -1,0 +1,124 @@
+---
+title: 'Building a University Portal with Power Pages #3'
+date: '2025-12-05'
+lastmod: '2025-08-16'
+tags: ['power-pages']
+draft: true
+summary: 'In part 2 I said I would cover the web templates required for the dashboard so let’s go and view some liquid examples.'
+images:
+  [
+    'https://res.cloudinary.com/dnpazhkyr/image/upload/v1767182685/Building_a_university_portal_3_frz8ud.png',
+  ]
+authors: ['default']
+---
+
+![tailwind-nextjs-banner](https://res.cloudinary.com/dnpazhkyr/image/upload/v1767182685/Building_a_university_portal_3_frz8ud.png)
+
+## **Quick recap**
+
+In this series, I’m documenting the process of building a university portal with Power Pages, sharing practical tips along the way :)
+
+In part 2 I said I would cover the [web templates](https://learn.microsoft.com/en-us/power-pages/configure/web-templates) required for the dashboard so let’s go and view some liquid examples.
+
+![](https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExYjBvaXRyMm03bTNscnhxdG0yNmIyc2hhM2I5bXJhZHZscG1tcnJ6ZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7brdgdB5YunnPDd5Ky/giphy.gif)
+
+## Liquid and web templates
+
+In order to get the data needed for the dashboard I used web templates that includes liquid to fetch the data from Dataverse. This is only required when you’re not using the out of the box components Power Pages provides.
+
+It’s best to use out of the box when you can but for custom layouts and custom designs, web templates and liquid do the job well.
+
+If you’re not familiar with liquid, don’t worry, in this <a target="_self" rel="noopener noreferrer nofollow" href="https://www.linkedin.com/posts/calumharrison_how-to-learn-liquid-for-power-pages-activity-7327958962694144001-3SXt?utm_source=share&amp;utm_medium=member_desktop&amp;rcm=ACoAABrxCdwBtlhbw9-YOe-FKYDZcwmREJKnG0Y">LinkedIn post</a> I cover how to to learn it :)
+
+Remember this from part 2?
+
+![](https://res.cloudinary.com/dnpazhkyr/image/upload/v1755343712/portal_structure_dashboard_takf3p.png)
+
+With this, I created 3 web templates for the dashboard to separate the code out.
+
+1. Dashboard base layout (gives the structure for the dashboard page).
+2. Dashboard page (where most of the dashboard content will sit).
+3. Dashboard sidebar (created a [weblink set](https://learn.microsoft.com/en-us/power-pages/configure/manage-web-links) to make the sidebar links dynamic).
+
+```xml
+<!-- Base layout -->
+
+<div class="container">
+    <div class="row">
+      {% block sidebar %}{% endblock %}
+      <main class="col p-2">
+        {% block content %}{% endblock %}
+      </main>
+    </div>
+  </div>
+
+<!-- Sidebar -->
+
+{% block sidebar %}
+<aside class="col-2 bg-white vh-100 shadow-sm p-3 mt-4">
+  <ul class="nav flex-column gap-3">
+    {% assign sidebar = weblinks['Sidebar'] %}
+      {% if sidebar %}
+        {% for link in sidebar.weblinks %}
+          <li><a href="{{ link.url | escape }}" class="nav-link text-dark">{{ link.name | escape }} </a></li>
+        {% endfor %}
+      {% endif %}
+  </ul>
+</aside>
+{% endblock %}
+
+<!-- Dashboard page -->
+
+{% extends 'University_BaseLayout' %}
+
+{% block sidebar %}
+{% include 'University_DashboardSidebar' %}
+{% endblock %}
+
+{% block content %}
+<div id="mainContent" class="wrapper-body" role="main">
+  <div class="page-copy">
+    {% editable page 'adx_copy' type: 'html', liquid: true %}
+{% endblock %}
+```
+
+Then I started playing around with the header and I thought it would be cool to have the profile icon to show the initials of the logged in contact. Basically completely copy what Microsoft do.
+
+![](https://res.cloudinary.com/dnpazhkyr/image/upload/v1755721145/header_v1_tr5gx5.png)
+
+```python
+ {% if user %}
+   {% assign first_initial = user.firstname | slice: 0,1 %}
+   {% assign last_initial = user.lastname | slice: 0,1 %}
+   {% assign initials = first_initial | append: last_initial %}
+   {{ initials | upcase }}
+ {% else %}
+     XX
+ {% endif %}
+```
+
+```css
+.avatar-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+```
+
+## **What’s next?**
+
+Overall I’m pretty happy where it’s heading, in part 4 I will cover styling the portal with a custom theme to make it pop.
+
+![](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExaW5hMTM3ajU0M2RrdWhlbmtyaXI5Mm5zczR0M3Zia3hhaGh2a2tmdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xTiTnEHBh7qapyuvwQ/giphy.gif)
+
+If there is anything that I’ve covered that would be useful to cover in more detail please let me know in the comments or LinkedIn and I can add it to the backlog for the future :)
+
+As always, thanks for reading and take it easy!
+
+**👋 Enjoyed this post?**  
+\*\*Sign up for my newsletter to get notified whenever a new blog is out.  
+\*\*\*Don't forget to check your spam folder so you don't miss out!\*
+
+This is a personal, non-work project just for learning and sharing.
