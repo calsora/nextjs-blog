@@ -1,0 +1,75 @@
+---
+title: 'How to add Bootstrap icons to Power Pages '
+date: '2025-12-01'
+lastmod: '2025-08-16'
+tags: ['power-pages', 'bootstrap']
+draft: true
+summary: 'Looking for free icons to add to Power Pages? Bootstrap has a FREE icon library'
+images:
+  [
+    'https://res.cloudinary.com/dnpazhkyr/image/upload/v1743022804/How_to_add_Bootstrap_icons_to_Power_Pages5_c4fqtr.png',
+  ]
+authors: ['default']
+---
+
+![tailwind-nextjs-banner](https://res.cloudinary.com/dnpazhkyr/image/upload/v1743022804/How_to_add_Bootstrap_icons_to_Power_Pages5_c4fqtr.png)
+
+Looking for free icons to add to Power Pages? Bootstrap has a **FREE** [**icon library**](https://icons.getbootstrap.com/) and in this tutorial we're going to show how easy it is to get started by adding a icon to a navbar (website header).
+
+![](https://res.cloudinary.com/dnpazhkyr/image/upload/v1743867197/headfonts2_axwk7k.png)
+
+## [Bootstrap icon library](https://res.cloudinary.com/dnpazhkyr/image/upload/v1743867197/headfonts2_axwk7k.png)
+
+There are loads of icons to choose from the Bootstrap library and to get started you will want to click on one of the icons and copy the icon font code as highlighted below.
+
+![ This image is a screenshot from the Bootstrap icon library, used for educational and illustrative purposes only. All rights belong to Bootstrap. Visit getbootstrap.com for more information.](https://res.cloudinary.com/dnpazhkyr/image/upload/v1743451312/bootstrap-icon-library_ej2rb0.png)
+
+## Install the library
+
+Open the portal management app and create a content snippet with the following values as need to install the Bootstrap icon library.
+
+Credit to [Ulrikke Akerbæk](https://ulrikke.akerbak.com/), as this brilliant [blog post](https://ulrikke.akerbak.com/2022/09/21/fontawesome-in-power-pages/) covers how to add font awesome icons to Power Pages. Ulrikke's post inspired this tutorial, where I apply the same approach to using Bootstrap icons instead.
+
+![This image is a screenshot of content snippet that's pre-populated with values](https://res.cloudinary.com/dnpazhkyr/image/upload/v1743865778/headfonts_ibcsw9.png)
+
+- Name: Head/Fonts
+- Website: Select your website
+- Type: HTML
+
+```html
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+/>
+```
+
+## Icon example
+
+![This image is a screenshot of a backpacking website made in Power Pages that shows a backpack icon in the website header](https://res.cloudinary.com/dnpazhkyr/image/upload/v1743864627/backpack-fill_ceuh3r.png)
+
+To add an icon, all we need to do is add the below code element to where we would like this to be included. In the example above, the icon was added to the navbar (website header).
+
+```html
+<i class="bi bi-backpack-fill"> </i>
+```
+
+All of the code from the "Mobile Header" content snippet that was changed to add a icon from Bootstrap can be found below.
+
+```html
+<i class="bi bi-backpack-fill" style="color: #CB725D"></i>
+<a href="~/">
+  {% if snippets['Site name'] %}
+  <h1 class="siteTitle custom-sitetitle">{{ snippets['Site name'] }}</h1>
+  {% endif %}
+</a>
+```
+
+To have more control of the size of the Bootstrap icons you can use the "fs-" utility class. For example, fs-1 sets the icon to the largest size.
+
+## Conclusion
+
+Now you can add even more icons to your hearts content for Power Pages. Icons are really powerful for demonstrating actions to the end user and should be considered in Power Pages projects.
+
+As always, thanks for reading and take it easy!
+
+👋 **If you liked this then please sign up to my newsletter that will notify you once a new blog comes out.**
