@@ -20,6 +20,12 @@ export default function Home({ posts }) {
             This is my blog where I share {siteMetadata.description} as a Power Platform & D365
             developer based in the UK.
           </p>
+          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+            Programming languages used in the past.
+          </p>
+
+          {/* Marquee component showcasing pro languages --- */}
+          <ProLanguagesMarquee />
         </div>
         <ul className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {!posts.length && 'No posts found.'}

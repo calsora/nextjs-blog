@@ -1,3 +1,7 @@
+# Blog
+
+I've used the below repo to build this blog so please check it out :)
+
 ![tailwind-nextjs-banner](/public/static/images/twitter-card.png)
 
 # Tailwind Nextjs Starter Blog
