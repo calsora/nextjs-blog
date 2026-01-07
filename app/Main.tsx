@@ -21,7 +21,7 @@ export default function Home({ posts }) {
             developer based in the UK.
           </p>
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            Programming languages used in the past.
+            Languages used in the past.
           </p>
 
           {/* Marquee component showcasing pro languages --- */}
