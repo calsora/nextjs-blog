@@ -5,7 +5,6 @@ import { formatDate } from 'pliny/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
 import ProLanguagesMarquee from '@/components/ProLanguagesMarquee'
 import Image from 'next/image'
-
 const MAX_DISPLAY = 6
 
 export default function Home({ posts }) {
