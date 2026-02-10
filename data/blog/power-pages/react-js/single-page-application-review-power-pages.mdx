@@ -1,0 +1,69 @@
+---
+title: 'Power Pages review of single-page applications (SPA)'
+date: '2026-02-10'
+lastmod: '2026-02-10'
+tags: ['react-js', 'power-pages']
+draft: false
+summary: 'This is my review of this SPA support for Power Pages and I will answer whether or not you should consider this for future projects.'
+images:
+  [
+    'https://res.cloudinary.com/dnpazhkyr/image/upload/v1770667602/Power_Pages_SPA_review_e9ohmq.png',
+  ]
+authors: ['default']
+---
+
+![tailwind-nextjs-banner](https://res.cloudinary.com/dnpazhkyr/image/upload/v1770667602/Power_Pages_SPA_review_e9ohmq.png)
+
+Microsoft recently have been releasing lots of great features for the future of Power Pages including the [support of Single Page Application (SPA)](https://learn.microsoft.com/en-us/power-pages/configure/create-code-sites).
+
+This is my review of this feature and I will answer whether or not you should consider this for future projects.
+
+_This feature is now_ [_generally available_](https://www.microsoft.com/en-us/power-platform/blog/power-pages/announcing-general-availability-ga-of-building-single-page-applications-on-power-pages/)_._
+
+## What’s a Single Page Application (SPA)?
+
+[MDN Web Docs](https://developer.mozilla.org/en-US/docs/Glossary/SPA) defines SPA this way.
+
+_“An SPA (Single-page application) is a web app implementation that loads only a single web document, and then updates the body content of that single document via JavaScript APIs such as_ [_Fetch when_](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) _different content is to be shown._
+
+_This therefore allows users to use websites without loading whole new pages from the server, which can result in performance gains and a more dynamic experience, with some tradeoff disadvantages such as SEO, more effort required to maintain state, implement navigation, and do meaningful performance monitoring.“_
+
+## Benefits for Power Pages projects
+
+### Look and feel
+
+The look and feel of Power Pages can be improved as you have full control. I can see this working well with portals that have their own design framework. For instance, in the UK for any Government service you have to use the [GOV.UK Design System](https://design-system.service.gov.uk/get-started/) and now we can use existing repositories (React JS) to save time and contribute more to open source (with consent).
+
+### Modern development
+
+Modern development. A big problem with Power Pages development is managing source control with teams as you can’t develop locally on your machine. Before you would have to make sure you don’t override other peoples work when you upload the entire portal. With SPA support, according to Microsoft you can develop locally on localhost.
+
+### Governance and security
+
+Power Pages provides a strong security model through features such as table permissions, which control what data can be accessed via the Web API. When configured correctly, this offers useful guardrails for teams and reduces the effort required to implement consistent security and access controls.
+
+## Things to consider for Power Pages projects
+
+### Skills shortage
+
+Many teams in the low-code space won’t have the experience or knowledge of modern web technologies (React or Next JS). **For developers with past experience in pro-code, this will be a great opportunity.** Yes you could “vibe code“ a MVP but at some point the code will be unmaintainable if the person driving the prompts does not understand the concepts of best practice for modern web technology.
+
+### No liquid :(
+
+Liquid is a template language used by Power Pages to retrieve and render data exposed by the platform. It’s a nightmare to debug but compared to setting up code to connect to the web API its a lot easier and quicker to develop dynamic web pages.
+
+### RIP out of the box.
+
+We have to remember what makes Power Pages great. You can with no/low code spin up a website connected to Dataverse and submit data using forms. With moving to “pro-code“ you lose these benefits and in return have more control but more time spent on development and code maintenance.
+
+## Should you use it
+
+If you’re not using out of the box features like basic forms or Liquid, Power Pages becomes harder to justify from a cost perspective, particularly with the current licensing model for high user volumes. In some cases, the investment required to build a custom SPA portal may be better directed toward building an in-house solution using React or [ASP.NET](http://ASP.NET) connected directly to the Dataverse Web API.
+
+That said, there are scenarios where SPA support makes sense, particularly for small to mid-scale user traffic or highly interactive experiences. However, it shouldn’t be adopted without serious thought and planning. While the potential is strong, it will take time for the ecosystem to mature and for teams to build the skills required to deliver these solutions properly.
+
+Before discarding the “old toy” of traditional Power Pages, it’s worth carefully considering the long term cost of ownership when developing and maintaining an SPA based Power Pages site.
+
+![](https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExZmpwcnZpcnptbDQza2t0YnJqdjY2bHp6eHE5MGQ4dmY5ZWEzcWoxNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/9GimADqtnpAPe/giphy.gif)
+
+_The views and opinions expressed in this blog are my own and do not reflect the views or opinions of the company I work for._
