@@ -16,7 +16,7 @@ const projectsData: Project[] = [
     title: 'Generic booking single-page application built with Power Pages',
     description: `A generic booking application built with local data for Power Pages.`,
     imgSrc: '/static/images/booking-app.png',
-    href: 'https://github.com/calsora/power-pages-react-startup/',
+    href: 'https://power-pages-react-startup-1pid6883n-calsoras-projects.vercel.app/',
   },
 ]
 export default projectsData
