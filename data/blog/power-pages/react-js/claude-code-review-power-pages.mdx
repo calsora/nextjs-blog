@@ -1,0 +1,300 @@
+---
+title: 'Power Pages review of Claude Code'
+date: '2026-03-22'
+lastmod: '2026-03-22'
+tags: ['react-js', 'power-pages', AI]
+draft: false
+summary: 'This is my review of this feature and will let you know if it is worth considering for future projects.'
+images:
+  [
+    'https://res.cloudinary.com/dnpazhkyr/image/upload/q_auto/f_auto/v1774201184/Power_Pages_Plugin_-_Claude_Code_ddxbet.png',
+  ]
+authors: ['default']
+---
+
+![tailwind-nextjs-banner](https://res.cloudinary.com/dnpazhkyr/image/upload/q_auto/f_auto/v1774201184/Power_Pages_Plugin_-_Claude_Code_ddxbet.png)
+
+> Microsoft are experimenting with a preview feature that enables tools like Claude Code to integrate with Power Pages
+
+[Power Pages Plugin for Claude Code](https://learn.microsoft.com/en-us/power-pages/configure/create-code-site-using-claude-code)
+
+This is my review of this feature and will let you know if it's worth considering for future projects.
+
+At the time of writing, this feature is in preview and should not be used in production environments.
+
+## Example
+
+![](https://res.cloudinary.com/dnpazhkyr/image/upload/v1774199418/foi4-claude-portal_ofpl2h.gif)
+
+I've asked Claude Code to generate a freedom of request portal with the below prompt.
+
+<details data-node-type="hn-details-summary">
+  <summary>Claude prompt</summary>
+  <p>You are an expert React.js and frontend developer.</p>
+  <p>
+    Create a modern, minimal, and clean React.js website for submitting Freedom of Information (FOI)
+    requests.
+  </p>
+  <p>Tech stack:</p>
+  <ul>
+    <li>
+      <p>React (with functional components and hooks)</p>
+    </li>
+    <li>
+      <p>Tailwind CSS for styling</p>
+    </li>
+    <li>
+      <p>No heavy UI libraries (keep it lightweight and clean)</p>
+    </li>
+    <li>
+      <p>Use simple state management (useState/useReducer)</p>
+    </li>
+    <li>
+      <p>Structure the project cleanly for future integration with Power Pages / Dataverse APIs</p>
+    </li>
+  </ul>
+  <p>Design requirements:</p>
+  <ul>
+    <li>
+      <p>Minimal, GOV.UK-inspired clean design (lots of whitespace, simple typography)</p>
+    </li>
+    <li>
+      <p>Mobile responsive</p>
+    </li>
+    <li>
+      <p>Accessible (basic a11y: labels, aria where appropriate)</p>
+    </li>
+  </ul>
+  <p>Pages / Features:</p>
+  <ol>
+    <li>
+      <p>Home Page</p>
+    </li>
+  </ol>
+  <ul>
+    <li>
+      <p>Brief explanation of what an FOI request is</p>
+    </li>
+    <li>
+      <p>CTA button: "Submit a Request"</p>
+    </li>
+  </ul>
+  <ol start="2">
+    <li>
+      <p>FOI Request Form Page Form fields:</p>
+    </li>
+  </ol>
+  <ul>
+    <li>
+      <p>Full Name</p>
+    </li>
+    <li>
+      <p>Email Address</p>
+    </li>
+    <li>
+      <p>Organisation (optional)</p>
+    </li>
+    <li>
+      <p>Request Title</p>
+    </li>
+    <li>
+      <p>Detailed Request (textarea)</p>
+    </li>
+    <li>
+      <p>Public body being requested from (dropdown or input)</p>
+    </li>
+    <li>
+      <p>Consent checkbox (required)</p>
+    </li>
+  </ul>
+  <p>Validation:</p>
+  <ul>
+    <li>
+      <p>Required field validation</p>
+    </li>
+    <li>
+      <p>Email format validation</p>
+    </li>
+    <li>
+      <p>Show inline errors</p>
+    </li>
+  </ul>
+  <ol start="3">
+    <li>
+      <p>Confirmation Page</p>
+    </li>
+  </ol>
+  <ul>
+    <li>
+      <p>Show a success message after submission</p>
+    </li>
+    <li>
+      <p>Display a generated reference number (mock for now)</p>
+    </li>
+    <li>
+      <p>Explain next steps</p>
+    </li>
+  </ul>
+  <p>Functionality:</p>
+  <ul>
+    <li>
+      <p>Handle form submission with a mock API function (simulate async request)</p>
+    </li>
+    <li>
+      <p>Structure code so API layer can later connect to:</p>
+      <ul>
+        <li>
+          <p>Power Pages Web API</p>
+        </li>
+        <li>
+          <p>Dataverse</p>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <p>Keep API logic separated (e.g. /services/api.js)</p>
+    </li>
+  </ul>
+  <p>Components:</p>
+  <ul>
+    <li>
+      <p>Reusable Input component</p>
+    </li>
+    <li>
+      <p>Reusable Button component</p>
+    </li>
+    <li>
+      <p>Layout wrapper (header + footer)</p>
+    </li>
+    <li>
+      <p>Form components broken down cleanly</p>
+    </li>
+  </ul>
+  <p>Styling:</p>
+  <ul>
+    <li>
+      <p>Use Tailwind classes only</p>
+    </li>
+    <li>
+      <p>Clean spacing, rounded corners, subtle shadows</p>
+    </li>
+    <li>
+      <p>Neutral color palette (white, gray, blue accents)</p>
+    </li>
+  </ul>
+  <p>Extras:</p>
+  <ul>
+    <li>
+      <p>Add loading state on submit button</p>
+    </li>
+    <li>
+      <p>Disable button while submitting</p>
+    </li>
+    <li>
+      <p>Show error message if submission fails (mock failure case)</p>
+    </li>
+  </ul>
+  <p>Output:</p>
+  <ul>
+    <li>
+      <p>Provide full project structure</p>
+    </li>
+    <li>
+      <p>Include all React component code</p>
+    </li>
+    <li>
+      <p>Include Tailwind setup</p>
+    </li>
+    <li>
+      <p>Keep code clean and readable with comments</p>
+    </li>
+  </ul>
+  <p>Important:</p>
+  <ul>
+    <li>
+      <p>Do NOT overcomplicate</p>
+    </li>
+    <li>
+      <p>Do NOT use Redux or heavy frameworks</p>
+    </li>
+    <li>
+      <p>Prioritise simplicity and clarity</p>
+    </li>
+    <li>
+      <p>This is an MVP that could later be integrated into Power Pages</p>
+    </li>
+  </ul>
+  <p>Optional:</p>
+  <ul>
+    <li>
+      <p>Add notes on how to connect this to Power Pages / Dataverse later</p>
+    </li>
+  </ul>
+  <p></p>
+</details>
+
+_It uses the default publisher by default so make sure to ask it to create configuration under a custom publisher._
+
+I noticed some issues around accessibility for color contrasts for some elements and a few inconsistencies in component structure, which required manual fixes. Overall what it produced was great.
+
+## Bit of background
+
+Claude Code is an intelligent coding assistant that can generate code with human prompts similar to the other products out there like Github Copilot.
+
+The Power Pages Plugin, introduces [skills](https://code.claude.com/docs/en/skills) that allow Claude Code and Github Copilot to gather context from Dataverse and deploy actions like "create a site" etc. A full list of supported skills can be found below (taken from Microsoft's learn website).
+
+| Skill                      | Command             | What it does                                                                     |
+| -------------------------- | ------------------- | -------------------------------------------------------------------------------- |
+| Create site                | `/create-site`      | Scaffolds a site, applies your design direction, and builds pages and components |
+| Deploy site                | `/deploy-site`      | Builds the project and uploads it to Power Pages by using PAC CLI                |
+| Activate site              | `/activate-site`    | Provisions a website record and assigns a public URL                             |
+| Set up data model          | `/setup-datamodel`  | Creates Dataverse tables, columns, and relationships                             |
+| Add sample data (optional) | `/add-sample-data`  | Populates Dataverse tables with realistic test records                           |
+| Integrate Web API          | `/integrate-webapi` | Generates typed API client code, services, and table permissions                 |
+| Set up authentication      | `/setup-auth`       | Adds sign-in and sign-out functionality and role-based access control            |
+| Create web roles           | `/create-webroles`  | Generates web role YAML files for user access management                         |
+| Add SEO                    | `/add-seo`          | Generates robots.txt, sitemap.xml, and meta tags                                 |
+
+While elements of this have existed before (PAC CLI, Dataverse automation), bringing it together through a single AI-driven workflow is new and will challenge how we produce Power Pages solutions.
+
+## Benefits of Power Pages AI Development
+
+### Speed to market
+
+Overall running the entire process from "create-site" to "create-web-roles" it took around 2 hours for Claude Code to complete. Now when we compare this to standard software development this is a HUGE reduction of time. Something like this before may have taken several days or even a sprint of work (around 1–2 weeks depending on complexity).
+
+With this feature, customers can have proof of concepts sooner and overall solutions can be delivered faster, saving time and money.
+
+_I observed that the skills runs axe-core scripts (automated accessibility tests) that's really cool never heard of this library before._
+
+### More focus on architecture than UI/UX
+
+Out of the box without significant work, Power Pages sites don't look modern. So before you would have to spend a lot of time messing around with CSS to try and get something to look presentable (as you can tell I'm not a huge fan of CSS). Whereas now, single-page-applications we can use other frameworks like Tailwind and combine this with Claude Code and you get a modern, responsive website created with ease.
+
+With the above benefit, this allows more time for Power Pages makers, to focus on functionality or security where it matters.
+
+### Power Pages development is more accessible.
+
+Power Pages has always been the distant member of the Power Platform family as it's not really low/no code compared to Canvas Apps etc. For someone to produce something properly they need web development experience to understand HTML,CSS,JavaScript, Liquid and how the DOM works in browsers etc and as a result most people would shy away from this if they have not come from a software/web development background.
+
+Now with coding assistants, anyone in theory can generate a sophisticated Power Pages site that can act as a great starter to a project.
+
+### Should you use it
+
+![](https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjk4YXpxdW9iNGVnNDNucmlmam14bzh1amh2ajNtZjlkMnE4cHQ5ZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/keTxaj2J6ygFABvp8N/giphy.gif)
+
+Overall I'd say this plugin is brilliant to accelerate development and to show an MVP to a client. You still need someone to understand how Power Pages works and to conduct these tasks.
+
+- Designing the correct Dataverse data model
+- Setting up table permissions securely
+- Managing environments and ALM properly
+
+The fact that these tasks can be completed is super sci-fi and it will be interesting to see if they add anymore skills like "create documentation" or "create automated tests".
+
+Claude at the moment, get's through too many tokens as I ran out of tokens mid way through the process but I'm sure this will be improved down the line.
+
+To get the most out of the tool, it's worth understanding the basics of React JS and Typescript and how to use Visual Studio as it will save you time and will make you more confident with what the AI outputs.
+
+Due to the above, I'd hope that pro-code developers/architects that understand the Power Platform will be valuable to shape and maintain code-apps and single-page-applications but we will wait and see.
+
+_The views and opinions expressed in this blog are my own and do not reflect the views or opinions of the company I work for._
