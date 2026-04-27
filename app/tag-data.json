@@ -1,7 +1,9 @@
 {
-  "react-js": 8,
-  "power-pages": 14,
-  "bootstrap": 4,
   "linux": 1,
-  "sass": 1
+  "power-pages": 15,
+  "bootstrap": 4,
+  "security": 1,
+  "react-js": 8,
+  "sass": 1,
+  "ai": 1
 }
