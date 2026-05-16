@@ -1,8 +1,10 @@
 {
-  "linux": 1,
+  "architecture": 1,
+  "c4": 1,
   "power-pages": 15,
   "bootstrap": 4,
   "security": 1,
+  "linux": 1,
   "react-js": 8,
   "sass": 1,
   "ai": 1
