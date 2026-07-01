@@ -1,17 +1,17 @@
 {
   "architecture": 1,
   "c4": 1,
+  "linux": 1,
+  "github-copilot": 1,
+  "power-platform": 2,
   "power-pages": 15,
   "bootstrap": 4,
   "security": 1,
-  "linux": 1,
   "typescript": 1,
-  "power-platform": 2,
   "vitest": 1,
   "vite": 1,
   "unit-test": 1,
   "react-js": 8,
   "sass": 1,
-  "github-copilot": 1,
   "ai": 1
 }
